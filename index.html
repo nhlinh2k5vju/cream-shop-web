@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới Thiệu Sản Phẩm | The Pastel Corner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+
+<body class="w-full">
+
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-10 relative">
+            <div class="absolute top-0 left-0 right-0 h-20 bg-white/80 backdrop-blur-sm shadow-md rounded-b-2xl"></div>
+            <nav class="relative z-10 h-20 flex justify-center items-center space-x-60">
+                <div class="flex items-center space-x-16">
+                    <a href="#layer-1" class="nav-link text-lg text-slate-600 hover:text-blue-800 transition-all duration-300">Home</a>
+                    <a href="/about.html" class="text-lg text-slate-600 hover:text-blue-800 transition-all duration-300">About</a>
+                </div>
+                <div class="flex items-center space-x-14">
+                    <a href="#layer-2" class="nav-link text-lg text-slate-600 hover:text-blue-800 transition-all duration-300">Menu</a>
+                    <a href="#footer" class="nav-link text-lg text-slate-600 hover:text-blue-800 transition-all duration-300">Contact</a>
+                </div>
+            </nav>
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 z-20">
+                <a href="#layer-1" class="block w-24 h-24 bg-white rounded-full shadow-lg flex items-center justify-center transition-transform duration-300 hover:scale-110 p-1">
+                    <img src="/image/logo-2.png" alt="Logo" class="rounded-full" onerror="this.onerror=null;this.src='https://placehold.co/96x96/c3cfe2/334155?text=Logo';">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-40">
+        <section id="layer-1" class="min-h-screen flex flex-col items-center justify-center text-center bg-white">
+            <div class="py-16">
+                <h1 class="text-4xl md:text-6xl font-bold text-slate-800 mb-4">Trải Nghiệm Vị Giác Tinh Tế</h1>
+                <p class="text-lg md:text-xl text-slate-600 mb-8">Nơi mỗi món ăn là một tác phẩm nghệ thuật.</p>
+            </div>
+<!--Hinh Home -->
+            <img src="/image/home-bg.jpg" alt="Hình ảnh giới thiệu sản phẩm" class="w-full h-auto object-cover">
+        </section>
+
+
+        <!--Menu cac mon an -->
+        <section id="layer-2" class="min-h-screen flex flex-col items-center justify-center py-20 bg-slate-50">
+            <h2 class="text-3xl md:text-5xl font-bold text-slate-800 mb-16 text-center">Thực Đơn Đặc Sắc</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-7xl px-4">
+                <a href="#layer-3" class="product-card-new group relative overflow-hidden rounded-2xl h-96 flex items-center justify-center text-center text-white p-6" style="background-image: url('images/salad.jpg')">
+                    <div class="overlay absolute inset-0 bg-black/30 group-hover:bg-black/50"></div>
+                    <h3 class="relative z-10 text-4xl font-black uppercase tracking-wider">Salad<br>Cầu Vồng</h3>
+                </a>
+                <a href="#layer-4" class="product-card-new group relative overflow-hidden rounded-2xl h-96 flex items-center justify-center text-center text-white p-6" style="background-image: url('images/steak.jpg')">
+                    <div class="overlay absolute inset-0 bg-black/30 group-hover:bg-black/50"></div>
+                    <h3 class="relative z-10 text-4xl font-black uppercase tracking-wider">Steak<br>Bò</h3>
+                </a>
+                <a href="#layer-5" class="product-card-new group relative overflow-hidden rounded-2xl h-96 flex items-center justify-center text-center text-white p-6" style="background-image: url('images/pasta.jpg')">
+                    <div class="overlay absolute inset-0 bg-black/30 group-hover:bg-black/50"></div>
+                    <h3 class="relative z-10 text-4xl font-black uppercase tracking-wider">Mì Ý<br>Nấm</h3>
+                </a>
+                <a href="#layer-6" class="product-card-new group relative overflow-hidden rounded-2xl h-96 flex items-center justify-center text-center text-white p-6" style="background-image: url('images/salmon.jpg')">
+                    <div class="overlay absolute inset-0 bg-black/30 group-hover:bg-black/50"></div>
+                    <h3 class="relative z-10 text-4xl font-black uppercase tracking-wider">Cá Hồi<br>Áp Chảo</h3>
+                </a>
+                <a href="#layer-7" class="product-card-new group relative overflow-hidden rounded-2xl h-96 flex items-center justify-center text-center text-white p-6" style="background-image: url('images/soup.jpg')">
+                    <div class="overlay absolute inset-0 bg-black/30 group-hover:bg-black/50"></div>
+                    <h3 class="relative z-10 text-4xl font-black uppercase tracking-wider">Súp<br>Bí Đỏ</h3>
+                </a>
+                <a href="#layer-8" class="product-card-new group relative overflow-hidden rounded-2xl h-96 flex items-center justify-center text-center text-white p-6" style="background-image: url('images/chicken.jpg')">
+                    <div class="overlay absolute inset-0 bg-black/30 group-hover:bg-black/50"></div>
+                    <h3 class="relative z-10 text-4xl font-black uppercase tracking-wider">Gà<br>Nướng</h3>
+                </a>
+                <a href="#layer-9" class="product-card-new group relative overflow-hidden rounded-2xl h-96 flex items-center justify-center text-center text-white p-6" style="background-image: url('images/tiramisu.jpg')">
+                    <div class="overlay absolute inset-0 bg-black/30 group-hover:bg-black/50"></div>
+                    <h3 class="relative z-10 text-4xl font-black uppercase tracking-wider">Bánh<br>Tiramisu</h3>
+                </a>
+                <a href="#layer-10" class="product-card-new group relative overflow-hidden rounded-2xl h-96 flex items-center justify-center text-center text-white p-6" style="background-image: url('images/tea.jpg')">
+                    <div class="overlay absolute inset-0 bg-black/30 group-hover:bg-black/50"></div>
+                    <h3 class="relative z-10 text-4xl font-black uppercase tracking-wider">Trà<br>Dâu Tằm</h3>
+                </a>
+            </div>
+        </section>
+
+        <!--Thong tin tung mon -->
+        <section id="layer-3" class="product-section w-full flex flex-col md:flex-row items-center">
+            <div class="w-full md:w-1/2 product-image-container">
+                <img src="https://placehold.co/960/960/fecaca/991b1b?text=Salad+C%E1%BA%A7u+V%E1%BB%93ng" alt="Salad Cầu Vồng" class="w-full h-full object-cover">
+            </div>
+            <div class="w-full md:w-1/2 flex items-center justify-center p-8 md:p-16 bg-white">
+                <div class="max-w-md">
+                    <h3 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Salad Cầu Vồng</h3>
+                    <p class="text-lg text-slate-600 leading-relaxed">Một sự kết hợp hoàn hảo giữa các loại rau củ tươi ngon nhất: xà lách romaine, cà chua bi, dưa chuột, ớt chuông và bắp cải tím. Tất cả được hòa quyện cùng sốt chanh dây đặc biệt, mang đến một khởi đầu nhẹ nhàng và đầy sảng khoái cho bữa ăn của bạn.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="layer-4" class="product-section w-full flex flex-col md:flex-row items-center">
+            <div class="w-full md:w-1/2 flex items-center justify-center p-8 md:p-16 bg-slate-100 md:order-1">
+                <div class="max-w-md text-right">
+                    <h3 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Steak Bò Thượng Hạng</h3>
+                    <p class="text-lg text-slate-600 leading-relaxed">Thịt bò ngoại nhập được lựa chọn kỹ lưỡng, nướng trên lửa than ở độ chín hoàn hảo theo yêu cầu của bạn. Món steak mềm mọng, thơm lừng, ăn kèm với khoai tây nghiền và sốt tiêu xanh trứ danh sẽ chinh phục cả những thực khách khó tính nhất.</p>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 product-image-container md:order-2">
+                <img src="https://placehold.co/960x960/fed7aa/9a3412?text=Steak+B%C3%B2" alt="Steak Bò" class="w-full h-full object-cover">
+            </div>
+        </section>
+
+        <section id="layer-5" class="product-section w-full flex flex-col md:flex-row items-center">
+            <div class="w-full md:w-1/2 product-image-container">
+                <img src="https://placehold.co/960x960/d9f99d/3f6212?text=M%C3%AC+%C3%9D" alt="Mì Ý" class="w-full h-full object-cover">
+            </div>
+            <div class="w-full md:w-1/2 flex items-center justify-center p-8 md:p-16 bg-white">
+                <div class="max-w-md">
+                    <h3 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Mì Ý Sốt Kem Nấm</h3>
+                    <p class="text-lg text-slate-600 leading-relaxed">Sợi mì Ý dai mềm được bao phủ bởi lớp sốt kem nấm béo ngậy, thơm phức mùi lá hương thảo và phô mai Parmesan. Một món ăn cổ điển của Ý được biến tấu theo phong cách riêng, mang lại cảm giác ấm cúng và ngon miệng.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="layer-6" class="product-section w-full flex flex-col md:flex-row items-center">
+            <div class="w-full md:w-1/2 flex items-center justify-center p-8 md:p-16 bg-slate-100 md:order-1">
+                <div class="max-w-md text-right">
+                    <h3 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Cá Hồi Áp Chảo</h3>
+                    <p class="text-lg text-slate-600 leading-relaxed">Phi lê cá hồi Na Uy tươi ngon được áp chảo với bơ và tỏi, tạo nên lớp da giòn rụm trong khi phần thịt bên trong vẫn mềm ngọt và mọng nước. Món ăn được phục vụ cùng măng tây nướng và một lát chanh vàng tươi.</p>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 product-image-container md:order-2">
+                <img src="https://placehold.co/960x960/bfdbfe/1e3a8a?text=C%C3%A1+H%E1%BB%93i" alt="Cá Hồi" class="w-full h-full object-cover">
+            </div>
+        </section>
+
+        <section id="layer-7" class="product-section w-full flex flex-col md:flex-row items-center">
+            <div class="w-full md:w-1/2 product-image-container">
+                <img src="https://placehold.co/960x960/fbcfe8/9d2667?text=S%C3%BAp+B%C3%AD" alt="Súp Bí Đỏ" class="w-full h-full object-cover">
+            </div>
+            <div class="w-full md:w-1/2 flex items-center justify-center p-8 md:p-16 bg-white">
+                <div class="max-w-md">
+                    <h3 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Súp Bí Đỏ</h3>
+                    <p class="text-lg text-slate-600 leading-relaxed">Súp được nấu từ bí đỏ hồ lô tươi, xay nhuyễn cùng kem tươi tạo nên độ sánh mịn hoàn hảo. Vị ngọt thanh tự nhiên của bí đỏ kết hợp với chút béo ngậy của kem, rắc thêm vài hạt bí rang giòn, là một món khai vị tuyệt vời.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="layer-8" class="product-section w-full flex flex-col md:flex-row items-center">
+            <div class="w-full md:w-1/2 flex items-center justify-center p-8 md:p-16 bg-slate-100 md:order-1">
+                <div class="max-w-md text-right">
+                    <h3 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Gà Nướng Mật Ong</h3>
+                    <p class="text-lg text-slate-600 leading-relaxed">Đùi gà được tẩm ướp với mật ong rừng và các loại gia vị đặc trưng, sau đó nướng chậm trong lò để thịt chín đều, mềm và không bị khô. Lớp da vàng óng, giòn tan, phủ sốt mật ong ngọt ngào chắc chắn sẽ làm bạn hài lòng.</p>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 product-image-container md:order-2">
+                <img src="https://placehold.co/960x960/ddd6fe/5b21b6?text=G%C3%A0+N%C6%B0%E1%BB%9Bng" alt="Gà Nướng" class="w-full h-full object-cover">
+            </div>
+        </section>
+
+        <section id="layer-9" class="product-section w-full flex flex-col md:flex-row items-center">
+            <div class="w-full md:w-1/2 product-image-container">
+                <img src="https://placehold.co/960x960/a5f3fc/0e7490?text=Tiramisu" alt="Tiramisu" class="w-full h-full object-cover">
+            </div>
+            <div class="w-full md:w-1/2 flex items-center justify-center p-8 md:p-16 bg-white">
+                <div class="max-w-md">
+                    <h3 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Bánh Tiramisu</h3>
+                    <p class="text-lg text-slate-600 leading-relaxed">Món tráng miệng kinh điển từ Ý. Bánh quy Savoiardi được nhúng trong cà phê espresso đậm đà, xếp lớp xen kẽ với kem Mascarpone béo ngậy, cuối cùng được phủ một lớp bột cacao đắng nhẹ. Một sự cân bằng hoàn hảo giữa các hương vị.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="layer-10" class="product-section w-full flex flex-col md:flex-row items-center">
+            <div class="w-full md:w-1/2 flex items-center justify-center p-8 md:p-16 bg-slate-100 md:order-1">
+                <div class="max-w-md text-right">
+                    <h3 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Trà Dâu Tằm</h3>
+                    <p class="text-lg text-slate-600 leading-relaxed">Thức uống giải nhiệt tuyệt vời được pha chế từ trà đen, siro dâu tằm tự làm và những quả dâu tằm tươi mọng. Vị chua ngọt thanh mát của dâu tằm hòa quyện cùng vị chát nhẹ của trà sẽ giúp bạn xua tan mọi mệt mỏi.</p>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 product-image-container md:order-2">
+                <img src="https://placehold.co/960x960/fce7f3/9d174d?text=Tr%C3%A0+D%C3%A2u" alt="Trà Dâu Tằm" class="w-full h-full object-cover">
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer" class="bg-slate-800 text-white py-12">
+        <div class="container mx-auto text-center">
+            <h3 class="text-2xl font-bold mb-4">Liên Hệ Với Chúng Tôi</h3>
+            <p class="mb-2">Email: <a href="mailto:contact@pastelcorner.com" class="hover:text-blue-300">contact@pastelcorner.com</a></p>
+            <p class="mb-4">Số điện thoại: <a href="tel:+84123456789" class="hover:text-blue-300">(+84) 123 456 789</a></p>
+            <a href="https://facebook.com/NHL2K5" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300">
+                Facebook
+            </a>
+            <p class="mt-8 text-sm text-slate-400">&copy; 2024 The Pastel Corner. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/script.js" defer></script>
+
+</body>
+</html>
