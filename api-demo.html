@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Demo - Green Sorbetto</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .json-display {
+            background: #1a1a1a;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+            border-radius: 8px;
+            padding: 16px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-4xl font-bold text-center text-blue-800 mb-8">
+            🍧 Green Sorbetto API Demo
+        </h1>
+        
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <h2 class="text-2xl font-semibold mb-4">🚀 API Status</h2>
+            <div id="api-status" class="p-4 rounded bg-gray-100 text-gray-600">
+                Checking API connection...
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Get Products -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h3 class="text-xl font-semibold mb-4">📦 Get All Products</h3>
+                <button onclick="getProducts()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    Fetch Products
+                </button>
+                <div id="products-result" class="json-display mt-4 hidden"></div>
+            </div>
+
+            <!-- Get Shop Info -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h3 class="text-xl font-semibold mb-4">🏪 Shop Information</h3>
+                <button onclick="getShopInfo()" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                    Get Shop Info
+                </button>
+                <div id="shop-result" class="json-display mt-4 hidden"></div>
+            </div>
+
+            <!-- Create Product -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h3 class="text-xl font-semibold mb-4">➕ Create New Product</h3>
+                <div class="space-y-2 mb-4">
+                    <input id="product-name" type="text" placeholder="Product Name" class="w-full p-2 border rounded">
+                    <input id="product-price" type="number" placeholder="Price (VND)" class="w-full p-2 border rounded">
+                    <textarea id="product-description" placeholder="Description" class="w-full p-2 border rounded" rows="2"></textarea>
+                </div>
+                <button onclick="createProduct()" class="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">
+                    Create Product
+                </button>
+                <div id="create-result" class="json-display mt-4 hidden"></div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h3 class="text-xl font-semibold mb-4">📧 Send Message</h3>
+                <div class="space-y-2 mb-4">
+                    <input id="contact-name" type="text" placeholder="Your Name" class="w-full p-2 border rounded">
+                    <input id="contact-email" type="email" placeholder="Your Email" class="w-full p-2 border rounded">
+                    <textarea id="contact-message" placeholder="Your Message" class="w-full p-2 border rounded" rows="3"></textarea>
+                </div>
+                <button onclick="sendMessage()" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                    Send Message
+                </button>
+                <div id="contact-result" class="json-display mt-4 hidden"></div>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-lg p-6 mt-6">
+            <h2 class="text-2xl font-semibold mb-4">📖 How This Works</h2>
+            <div class="text-gray-700 space-y-2">
+                <p><strong>1. Start the API:</strong> Run <code class="bg-gray-200 px-2 py-1 rounded">python app.py</code> in your terminal</p>
+                <p><strong>2. Click the buttons:</strong> Each button makes a real API call to your Python backend</p>
+                <p><strong>3. See the results:</strong> The JSON responses appear in the green terminal-style boxes</p>
+                <p><strong>4. Learn from the code:</strong> Check the browser's developer tools (F12) to see the network requests</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:5000';
+
+        // Check API status on page load
+        window.onload = function() {
+            checkApiStatus();
+        };
+
+        async function checkApiStatus() {
+            const statusDiv = document.getElementById('api-status');
+            try {
+                const response = await fetch(`${API_BASE}/`);
+                if (response.ok) {
+                    const data = await response.json();
+                    statusDiv.innerHTML = `
+                        <span class="text-green-600 font-bold">✅ API is running!</span><br>
+                        <span class="text-sm">Version: ${data.version} | Status: ${data.status}</span>
+                    `;
+                    statusDiv.className = 'p-4 rounded bg-green-100 text-green-800';
+                } else {
+                    throw new Error('API returned an error');
+                }
+            } catch (error) {
+                statusDiv.innerHTML = `
+                    <span class="text-red-600 font-bold">❌ API is not running</span><br>
+                    <span class="text-sm">Start the server with: python app.py</span>
+                `;
+                statusDiv.className = 'p-4 rounded bg-red-100 text-red-800';
+            }
+        }
+
+        async function getProducts() {
+            const resultDiv = document.getElementById('products-result');
+            resultDiv.classList.remove('hidden');
+            resultDiv.textContent = 'Loading...';
+            
+            try {
+                const response = await fetch(`${API_BASE}/api/products`);
+                const data = await response.json();
+                resultDiv.textContent = JSON.stringify(data, null, 2);
+            } catch (error) {
+                resultDiv.textContent = `Error: ${error.message}`;
+            }
+        }
+
+        async function getShopInfo() {
+            const resultDiv = document.getElementById('shop-result');
+            resultDiv.classList.remove('hidden');
+            resultDiv.textContent = 'Loading...';
+            
+            try {
+                const response = await fetch(`${API_BASE}/api/shop`);
+                const data = await response.json();
+                resultDiv.textContent = JSON.stringify(data, null, 2);
+            } catch (error) {
+                resultDiv.textContent = `Error: ${error.message}`;
+            }
+        }
+
+        async function createProduct() {
+            const resultDiv = document.getElementById('create-result');
+            const name = document.getElementById('product-name').value;
+            const price = document.getElementById('product-price').value;
+            const description = document.getElementById('product-description').value;
+
+            if (!name || !price || !description) {
+                resultDiv.classList.remove('hidden');
+                resultDiv.textContent = 'Please fill in all fields!';
+                return;
+            }
+
+            resultDiv.classList.remove('hidden');
+            resultDiv.textContent = 'Creating product...';
+
+            try {
+                const response = await fetch(`${API_BASE}/api/products`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        name: name,
+                        description: description,
+                        price: parseInt(price),
+                        category: 'sorbet'
+                    })
+                });
+                
+                const data = await response.json();
+                resultDiv.textContent = JSON.stringify(data, null, 2);
+                
+                // Clear form if successful
+                if (response.ok) {
+                    document.getElementById('product-name').value = '';
+                    document.getElementById('product-price').value = '';
+                    document.getElementById('product-description').value = '';
+                }
+            } catch (error) {
+                resultDiv.textContent = `Error: ${error.message}`;
+            }
+        }
+
+        async function sendMessage() {
+            const resultDiv = document.getElementById('contact-result');
+            const name = document.getElementById('contact-name').value;
+            const email = document.getElementById('contact-email').value;
+            const message = document.getElementById('contact-message').value;
+
+            if (!name || !email || !message) {
+                resultDiv.classList.remove('hidden');
+                resultDiv.textContent = 'Please fill in all fields!';
+                return;
+            }
+
+            resultDiv.classList.remove('hidden');
+            resultDiv.textContent = 'Sending message...';
+
+            try {
+                const response = await fetch(`${API_BASE}/api/contact`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        name: name,
+                        email: email,
+                        message: message
+                    })
+                });
+                
+                const data = await response.json();
+                resultDiv.textContent = JSON.stringify(data, null, 2);
+                
+                // Clear form if successful
+                if (response.ok) {
+                    document.getElementById('contact-name').value = '';
+                    document.getElementById('contact-email').value = '';
+                    document.getElementById('contact-message').value = '';
+                }
+            } catch (error) {
+                resultDiv.textContent = `Error: ${error.message}`;
+            }
+        }
+    </script>
+</body>
+</html>
